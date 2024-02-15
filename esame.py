@@ -90,7 +90,6 @@ class CSVTimeSeriesFile(CSVFile):
                     continue
 
 
-
                 if date in dates_seen:
 
                     raise ExamException('Date duplicate')
@@ -117,7 +116,7 @@ class CSVTimeSeriesFile(CSVFile):
 
                 continue
 
-
+        
         return time_series_data
 
 
@@ -154,8 +153,3 @@ def compute_increments(time_series, first_year, last_year):
             increments[f"{year}-{next_year}"] = round(yearly_average[next_year] - yearly_average[year], 1)
 
     return increments
-# Test delle funzioni con dati simulati 
-time_series_file = CSVTimeSeriesFile(name='testingh.csv')
-time_series = time_series_file.get_data()
-increments = compute_increments(time_series, '1949', '1952')
-print(increments)
