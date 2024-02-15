@@ -143,7 +143,7 @@ def compute_increments(time_series, first_year, last_year):
     for year in yearly_average:
         yearly_average[year] = sum(yearly_average[year]) / len(yearly_average[year])
 
-    # Calcolo degli incrementi
+    ## Calcolo degli incrementi
     increments = {}
     sorted_years = sorted(yearly_average.keys())
     for i in range(len(sorted_years) - 1):
